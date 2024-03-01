@@ -84,7 +84,7 @@ gulp.task('browsersync', function(callback) {
     server: {
       baseDir: [paths.dist.base.dir, paths.src.base.dir, paths.base.base.dir]
     },
-    open : false
+    open: false
   });
   callback();
 });
@@ -226,4 +226,4 @@ gulp.task('html', function() {
 
 gulp.task('build', gulp.series(gulp.parallel('clean:packageLock', 'clean:dist', 'copy:all', 'copy:libs'), 'fileinclude', 'js', 'scss', 'html'));
 
-gulp.task('default', gulp.series(gulp.series(gulp.parallel('clean:packageLock', 'clean:dist', 'copy:all', 'copy:libs'), 'fileinclude', 'js', 'scss',  'html'), gulp.parallel('browsersync', 'watch')));
+gulp.task('default', gulp.series(gulp.parallel('clean:packageLock', 'clean:dist', 'copy:all', 'copy:libs', 'fileinclude', 'js', 'scss',  'html'), gulp.parallel('browsersync', 'watch')));
