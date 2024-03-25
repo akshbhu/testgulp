@@ -225,5 +225,3 @@ gulp.task('html', function() {
 });
 
 gulp.task('build', gulp.series(gulp.parallel('clean:packageLock', 'clean:dist', 'copy:all', 'copy:libs'), 'fileinclude', 'js', 'scss', 'html'));
-
-gulp.task('default', gulp.series(gulp.parallel('clean:packageLock', 'clean:dist', 'copy:all', 'copy:libs', 'fileinclude', 'js', 'scss',  'html'), gulp.parallel('browsersync', 'watch')));
