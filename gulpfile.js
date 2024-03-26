@@ -86,6 +86,7 @@ gulp.task('browsersync', function(callback) {
     },
     open: false
   });
+  console.log('hello world');
   callback();
 });
 
